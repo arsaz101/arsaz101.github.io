@@ -15,6 +15,8 @@ import FileCopyIcon from '@material-ui/icons/FileCopy'
 import ExpandLessIcon from '@material-ui/icons/ExpandLess'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import AddIcon from '@material-ui/icons/Add'
+import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined'
+import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
 
 export const fiberManualRecordIcon = (styleClass?: string) => (
   <FiberManualRecordIcon className={styleClass} />
@@ -74,4 +76,12 @@ export const expandMoreIcon = (styleClass?: string) => (
 
 export const addIcon = (styleClass?: string) => (
   <AddIcon className={styleClass} />
+)
+
+export const starBorderOutlinedIcon = (styleClass?: string) => (
+  <StarBorderOutlinedIcon className={styleClass} />
+)
+
+export const infoOutlinedIcon = (styleClass?: string) => (
+  <InfoOutlinedIcon className={styleClass} />
 )

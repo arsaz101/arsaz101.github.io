@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import '../styles/Sidebar.css'
 import {
   fiberManualRecordIcon,
@@ -15,8 +15,23 @@ import {
   addIcon,
 } from '../constants/Icons'
 import SidebarOption from './SidebarOption'
+import db from '../database/firebase'
 
 function Sidebar() {
+  const [channels, setChannels] = useState([])
+
+  useEffect(() => {
+    // Run this code when the sidebar component loads
+    db.collection('rooms').onSnapshot((snapshot: any) =>
+      setChannels(
+        snapshot.docs.map((doc: any) => ({
+          id: doc.id,
+          name: doc.data().name,
+        })),
+      ),
+    )
+  }, [])
+
   return (
     <div className="sidebar">
       <div className="sidebar__header">
@@ -44,6 +59,9 @@ function Sidebar() {
 
       {/* {Connect to dB and list all the channels} */}
       {/* {<SidebarOption ... />} */}
+      {channels.map((channel: any) => (
+        <SidebarOption title={channel.name} id={channel.id} />
+      ))}
     </div>
   )
 }

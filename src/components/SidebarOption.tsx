@@ -4,11 +4,12 @@ import '../styles/SidebarOption.css'
 interface Props {
   Icon?: any
   title?: string
+  id?: string
 }
 
-function SidebarOption({ Icon, title }: Props) {
+function SidebarOption({ Icon, title, id }: Props) {
   return (
-    <div className="sidebarOption">
+    <div className="sidebarOption" id={id}>
       {Icon && Icon('sidebarOption__icon')}
       {Icon ? (
         <h3>{title}</h3>

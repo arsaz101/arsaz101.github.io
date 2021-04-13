@@ -17,6 +17,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import AddIcon from '@material-ui/icons/Add'
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
+import AccountCircleIcon from '@material-ui/icons/AccountCircle'
 
 export const fiberManualRecordIcon = (styleClass?: string) => (
   <FiberManualRecordIcon className={styleClass} />
@@ -84,4 +85,8 @@ export const starBorderOutlinedIcon = (styleClass?: string) => (
 
 export const infoOutlinedIcon = (styleClass?: string) => (
   <InfoOutlinedIcon className={styleClass} />
+)
+
+export const accountCircleIcon = (styleClass?: string) => (
+  <AccountCircleIcon className={styleClass} />
 )

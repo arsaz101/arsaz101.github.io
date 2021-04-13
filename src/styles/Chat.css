@@ -1,6 +1,8 @@
 .chat {
     flex: 0.7;
     flex-grow: 1;
+    overflow-y: scroll;
+    padding-bottom: 150px;
 }
 
 .chat__header {
@@ -12,7 +14,13 @@
 }
 
 .chat__channelName {
+    display: flex;
     text-transform: lowercase;
+}
+
+.chat__channelName > .MuiSvgIcon-root {
+    margin-left: 10px;
+    font-size: 18px;
 }
 
 .chat__headerRight > p {

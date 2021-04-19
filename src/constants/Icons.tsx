@@ -18,6 +18,8 @@ import AddIcon from '@material-ui/icons/Add'
 import StarBorderOutlinedIcon from '@material-ui/icons/StarBorderOutlined'
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined'
 import AccountCircleIcon from '@material-ui/icons/AccountCircle'
+import WhatsAppIcon from '@material-ui/icons/WhatsApp'
+import LibraryAddIcon from '@material-ui/icons/LibraryAdd'
 
 export const fiberManualRecordIcon = (styleClass?: string) => (
   <FiberManualRecordIcon className={styleClass} />
@@ -89,4 +91,12 @@ export const infoOutlinedIcon = (styleClass?: string) => (
 
 export const accountCircleIcon = (styleClass?: string) => (
   <AccountCircleIcon className={styleClass} />
+)
+
+export const whatsAppIcon = (styleClass?: string) => (
+  <WhatsAppIcon className={styleClass} />
+)
+
+export const libraryAddIcon = (styleClass?: string) => (
+  <LibraryAddIcon className={styleClass} />
 )

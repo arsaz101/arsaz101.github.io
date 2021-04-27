@@ -1,18 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../styles/App.css'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Header from '../components/Header'
 import Sidebar from '../components/Sidebar'
 import Chat from '../components/Chat'
 import Login from './Login'
+import { useStateValue } from '../general/provider/StateProvider'
 
 function App() {
-  const [user] = useState(null)
-
+  const [state]: any = useStateValue()
   return (
     <div className="App">
       <Router>
-        {!user ? (
+        {!state.user ? (
           <Login />
         ) : (
           <>
@@ -21,10 +21,9 @@ function App() {
               <Sidebar />
               <Switch>
                 <Route path="/room/:roomId">
-                  {/* <h1>Chat Screen</h1> */}
                   <Chat />
                 </Route>
-                <Route path="/">
+                <Route path="/" exact>
                   <h1>Welcome</h1>
                 </Route>
               </Switch>

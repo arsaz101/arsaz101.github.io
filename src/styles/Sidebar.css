@@ -1,22 +1,16 @@
 .sidebar {
-    color: white;
-    flex: 0.3;
+    color: var(--sidebar-content-color);
+    flex: 0.1;
     background-color: var(--app-color);
-    border-top: 1px solid #49274b;
+    border-right: 1px solid var(--border-color);
+    box-shadow: rgb(229 239 255) 0px 1px 3px 0px;
     max-width: 260px;
 }
 
 .sidebar > hr {
     margin-top: 10px;
     margin-bottom: 10px;
-    border: 1px solid #49274b;
-}
-
-.sidebar__header {
-    display: flex;
-    border-bottom: 1px solid #49274b;
-    padding-bottom: 10px;
-    padding: 13px;
+    border: 1px solid var(--border-color);
 }
 
 .sidebar__info {
@@ -24,12 +18,14 @@
 }
 
 .sidebar__info > h2 {
+    color: black;
     font-size: 15px;
     font-weight: 900;
     margin-bottom: 5px;
 }
 
 .sidebar__info > h3 {
+    color: black;
     display: flex;
     align-items: center;
     font-size: 13px;
@@ -41,12 +37,4 @@
     margin-top: 1px;
     margin-right: 2px;
     color: green;
-}
-
-.sidebar__header > .MuiSvgIcon-root {
-    padding: 8px;
-    color: #49274b;
-    font-size: 18px;
-    background-color: white;
-    border-radius: 999px;
 }

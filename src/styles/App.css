@@ -3,7 +3,15 @@
 }
 
 body {
-  --app-color: #3f0f40;
+  --app-color: rgb(255, 255, 255);
+  --border-color: rgb(229, 239, 255);
+  --sidebar-content-color: rgb(104, 121, 146);
+  --header-content-color: rgb(104, 121, 146);
+  --header-text-color: rgb(36, 55, 78);
+  --hover-color: rgb(0, 137, 255);
+  --hover-text-color: rgb(255, 255, 255);
+  --tool-tip: rgb(36, 55, 78);
+  --search-bar-color: rgba(104, 121, 146, 0.1);
 }
 
 .app__body {

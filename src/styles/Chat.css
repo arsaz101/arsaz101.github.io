@@ -1,8 +1,9 @@
 .chat {
-    flex: 0.7;
+    flex: 0.9;
     flex-grow: 1;
     overflow-y: scroll;
     padding-bottom: 150px;
+    background-color: #f6f9ff;
 }
 
 .chat__header {

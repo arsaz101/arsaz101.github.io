@@ -5,19 +5,20 @@ import '../styles/SidebarOption.css'
 
 type Props = {
   Icon?: any
-  title: string
+  title?: string
+  toolTip?: string
   id?: string
   addChannelOption?: boolean
 }
 
-function SidebarOption({ Icon, title, id, addChannelOption }: Props) {
+function SidebarOption({ Icon, title, toolTip, id, addChannelOption }: Props) {
   const history = useHistory()
 
   const selectChannel = () => {
     if (id) {
       history.push(`/room/${id}`)
     } else {
-      history.push(title)
+      alert('Invalid ID')
     }
   }
 
@@ -40,6 +41,9 @@ function SidebarOption({ Icon, title, id, addChannelOption }: Props) {
       onClick={addChannelOption ? addChannel : selectChannel}
     >
       {Icon && Icon('sidebarOption__icon')}
+      {(toolTip || title) && (
+        <span className="tooltiptext">{toolTip || title}</span>
+      )}
       {Icon ? (
         <h3>{title}</h3>
       ) : (

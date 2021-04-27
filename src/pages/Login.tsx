@@ -1,9 +1,41 @@
 import { Button } from '@material-ui/core'
 import React from 'react'
 import { whatsAppIcon, inboxIcon, libraryAddIcon } from '../constants/Icons'
+import { auth, googleProvider, facebookProvider } from '../database/firebase'
+import { useStateValue } from '../general/provider/StateProvider'
+import { actionTypes } from '../general/reducer/reducer'
 import '../styles/Login.css'
 
 function Login() {
+  const [, dispatch]: any = useStateValue()
+
+  const signInWithGoogle = () => {
+    auth
+      .signInWithPopup(googleProvider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        })
+      })
+      .catch((error) => {
+        alert(error.message)
+      })
+  }
+  const signInWithFacebook = () => {
+    auth
+      .signInWithPopup(facebookProvider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        })
+      })
+      .catch((error) => {
+        alert(error.message)
+      })
+  }
+
   return (
     <div className="login">
       <div className="login__container">
@@ -40,8 +72,8 @@ function Login() {
           <h1>Welcome</h1>
           <Button>Sign in with Email</Button>
           <span className="divider">OR</span>
-          <Button>Sign in with Google</Button>
-          <Button>Sign in with Facebook</Button>
+          <Button onClick={signInWithGoogle}>Sign in with Google</Button>
+          <Button onClick={signInWithFacebook}>Sign in with Facebook</Button>
           <span className="container__right__bottom">
             No account yet? <a href="./">Sign Up for free</a>
           </span>

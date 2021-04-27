@@ -1,14 +1,21 @@
 import React from 'react'
 import '../styles/Header.css'
 import { Avatar } from '@material-ui/core'
-import { accessTimeIcon, searchIcon, helpOutlineIcon } from '../constants/Icons'
+import { searchIcon, helpOutlineIcon } from '../constants/Icons'
+import { useStateValue } from '../general/provider/StateProvider'
 
 function Header() {
+  const [state]: any = useStateValue()
+
   return (
     <div className="header">
       <div className="header__left">
-        <Avatar className="header__avatar" alt="Arsal Azam" src="" />
-        {accessTimeIcon()}
+        <Avatar
+          className="header__avatar"
+          alt={state?.user?.displayName}
+          src={state?.user?.photoURL}
+        />
+        <span className="header__user__email">{state?.user?.email}</span>
       </div>
       <div className="header__search">
         {searchIcon()}
